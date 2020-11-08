@@ -13,11 +13,11 @@ class TasksController < ApplicationController
   end
 
   def create
-      @message = Task.new(task_params)
+      @task = Task.new(task_params)
 
-    if @message.save
+    if @task.save
       flash[:success] = 'タスクが投稿されました'
-      redirect_to @message
+      redirect_to @task
     else
       flash[:danger] = 'タスクが投稿されません'
       render :new
