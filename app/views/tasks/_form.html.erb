@@ -4,3 +4,15 @@
 
   <%= f.submit '投稿' %>
 <% end %>
+
+<% if task.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(task.errors.count, "error") %> prohibited this task from being saved:</h2>
+
+      <ul>
+        <% task.errors.full_tasks.each do |tsk| %>
+          <li><%= tsk %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
