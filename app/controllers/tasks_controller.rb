@@ -11,9 +11,7 @@ def index
 
 
   def show
-  @task =  current_user.tasks.find_by(id: params[:id])
-    
-
+  
 end
 
   def new
@@ -67,9 +65,9 @@ end
   end
   
  def correct_user
-unless
-    @task =  current_user.tasks.find_by(id: params[:id])
 
+    @task =  current_user.tasks.find_by(id: params[:id])
+     unless @task
       redirect_to root_url
 end
 end
