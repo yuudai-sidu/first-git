@@ -9,9 +9,7 @@ get 'login', to: 'sessions#new'
   resources :tasks
   
  get 'signup', to: 'users#new'
-  
-resources :users
-
+  resources :users, only: [:new, :create]
 
 end
 
